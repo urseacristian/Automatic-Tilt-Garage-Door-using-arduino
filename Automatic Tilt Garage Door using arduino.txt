@@ -1,0 +1,101 @@
+void one step (bool direction) {
+if (direction) {
+switch(stepNumber) {
+
+case 0:
+digitalwrite(STEPPER PIN 1,
+digitalwrite(STEPPER PIN 2,
+digitalwrite(STEPPER PIN 3,
+digitalwrite(STEPPER PIN 4,
+break;
+
+case 1:
+digitalwrite(STEPPER PIN 1,
+digitalwrite (STEPPER PIN 2,
+digitalWrite(STEPPER PIN 3,
+digitalwrite(STEPPER PIN 4,
+break;
+
+case 2:
+digitalwrite(STEPPER PIN 1,
+digitalwrite(STEPPER PIN 2,
+digitalwrite(STEPPER PIN 3,
+digitalwrite(STEPPER_PIN 4,
+break;
+
+case 3:
+digitalWrite(STEPPER PIN 1,
+digitalwrite(STEPPER PIN 2,
+digitalwrite(STEPPER PIN 3,
+digitalwrite(STEPPER PIN 4,
+break;
+
+HIGH) ;
+LOW) ;
+LOW);
+LOW) ;
+
+LOW) ;
+HIGH) ;
+LOW) ;
+LOW);
+
+LOW);
+LOW) ;
+HIGH) ;
+LOW) ;
+
+LOW) ;
+LOW) ;
+LOW) ;
+HIGH);
+
+void setup() {
+
+pinMode(BUTTON_PIN_1, INPUT_PULLUP);
+
+pinMode(STEPPER_PIN_1,
+
+OUTPUT);
+
+pinMode(STEPPER_PIN_2, OUTPUT);
+
+pinMode(STEPPER_PIN_3,
+
+OUTPUT);
+
+pinMode(STEPPER_PIN_4, OUTPUT);
+
+}
+
+void loop() {
+
+buttonState_1 = digitalRead(BUTTON_PIN_1);
+
+if (buttonState_1 == LOW) {
+
+if (oldDirection) {
+
+for (int i = 0; i < 1400; i++) {
+
+one_step(true);
+
+delay(2);
+
+}
+
+oldDirection = false;
+
+} else {
+
+for (int i = 0; i < 1400; i++) {
+
+one_step(true);
+
+delay(2);
+
+}
+
+}
+
+oldDirection = true;
